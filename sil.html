@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc mừng SiL's Girl 20/10</title>
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* Áp dụng phông chữ Pacifico cho toàn bộ trang */
+        body {
+            font-family: 'Pacifico', cursive;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffd1ff);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+            max-width: 600px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #ff69b4;
+        }
+
+        p {
+            font-size: 1.2em;
+            text-shadow: 0 0 5px #ffd1ff;
+        }
+
+        button {
+            background-color: #ff69b4;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+        }
+
+        button:hover {
+            background-color: #ff1493;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #ff69b4, 0 0 30px #ff69b4;
+        }
+
+        #surprise {
+            margin-top: 20px;
+            transition: opacity 0.5s ease;
+            opacity: 0;
+        }
+
+        #surprise.show {
+            opacity: 1;
+        }
+
+        .flower {
+            width: 250px;
+            margin-top: 15px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .sparkles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: #fff;
+            opacity: 0.8;
+            border-radius: 50%;
+            animation: sparkle 3s infinite ease-in-out;
+        }
+
+        @keyframes sparkle {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0); opacity: 0; }
+        }
+
+        .gif-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gif-image {
+            width: 570px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chúc mừng SiL's Girl nhân ngày 20/10!</h1>
+        <p>Chúc các SiL's Girl luôn xinh đẹp, mạnh mẽ và thành công! Cảm ơn vì đã luôn tỏa sáng và truyền cảm hứng cho mọi người.</p>
+        <button onclick="showSurprise()">Nhấn vào đây để nhận lời chúc đặc biệt</button>
+        <div id="surprise" class="gif-container">
+            <img src="720ee102-476c-4497-bc66-287f974c0d5e.gif" alt="Special Gif" class="gif-image">
+        </div>
+        <div class="sparkles"></div>
+    </div>
+
+    <script>
+        function showSurprise() {
+            const surprise = document.getElementById('surprise');
+            surprise.classList.toggle('show');
+        }
+
+        // Tạo các đốm sáng lung linh
+        const sparklesContainer = document.querySelector('.sparkles');
+        for (let i = 0; i < 50; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = Math.random() * 5 + 's';
+            sparkle.style.animationDuration = (Math.random() * 2 + 2) + 's';
+            sparklesContainer.appendChild(sparkle);
+        }
+    </script>
+</body>
+</html>
