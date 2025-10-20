@@ -3,14 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chúc mừng em nhân ngày 20/10</title>
-    <!-- Import Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Lời chúc 20/10 dễ thương</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Áp dụng phông chữ Pacifico cho toàn bộ trang */
+        /* Variables */
+        :root {
+            /* Đổi tông màu từ Hồng Đậm (lãng mạn) sang Hồng Nhạt/Vàng (dễ thương/tôn trọng) */
+            --primary-color: #ffb7b7; /* Light Coral - Màu hồng nhẹ nhàng */
+            --secondary-color: #ffe4e1; /* Misty Rose - Màu trắng hồng */
+            --text-color: #fff;
+            --card-bg: rgba(255, 255, 255, 0.3); /* Độ trong suốt nhẹ */
+        }
+
+        /* Áp dụng phông chữ Pacifico cho tiêu đề, Dancing Script cho nội dung */
         body {
-            font-family: 'Pacifico', cursive;
-            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffd1ff);
+            font-family: 'Dancing Script', cursive;
+            /* Giữ gradient, nhưng điều chỉnh màu cho nhẹ nhàng hơn */
+            background: linear-gradient(45deg, #fceabb, #f8b5a0, #ffc7d6); 
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             margin: 0;
@@ -18,9 +28,10 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            color: #fff;
+            color: var(--text-color);
             text-align: center;
             overflow: hidden;
+            perspective: 1000px;
         }
 
         @keyframes gradientBG {
@@ -30,34 +41,46 @@
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 30px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
-            max-width: 600px;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Đổ bóng nhẹ nhàng hơn */
+            max-width: 90%;
+            width: 500px;
             position: relative;
+            transform: rotateY(0deg) scale(1);
+            transition: transform 0.5s ease;
+        }
+
+        .container:hover {
+            transform: rotateY(3deg) scale(1.03); /* Hiệu ứng khi di chuột nhẹ hơn */
         }
 
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px #ff69b4;
+            font-family: 'Pacifico', cursive;
+            font-size: 3em;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3), 0 0 15px var(--secondary-color);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); } /* Tần suất pulse nhẹ hơn */
+            100% { transform: scale(1); }
         }
 
         p {
-            font-size: 1.2em;
-            text-shadow: 0 0 5px #ffd1ff;
+            font-size: 1.4em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+            font-weight: 700;
         }
-
-       
-        .flower {
-            width: 250px;
-            margin-top: 15px;
-            border-radius: 15px;
-            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
-        }
-
+        
+        /* Đã giữ lại hiệu ứng Sparkles */
         .sparkles {
             position: absolute;
             top: 0;
@@ -71,25 +94,111 @@
             position: absolute;
             width: 5px;
             height: 5px;
-            background: #fff;
+            background: var(--text-color);
             opacity: 0.8;
             border-radius: 50%;
             animation: sparkle 3s infinite ease-in-out;
+            box-shadow: 0 0 4px var(--secondary-color);
         }
 
         @keyframes sparkle {
-            0% { transform: scale(0); opacity: 0; }
-            50% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(0); opacity: 0; }
+            0% { transform: scale(0) rotate(0deg); opacity: 0; }
+            50% { transform: scale(1) rotate(180deg); opacity: 1; }
+            100% { transform: scale(0) rotate(360deg); opacity: 0; }
         }
 
+        /* Nút Tương Tác */
+        .reveal-btn {
+            background: var(--primary-color);
+            color: #4a4a4a; /* Đổi màu chữ sang tối để nổi bật trên nền hồng nhạt */
+            border: none;
+            padding: 12px 25px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+            border-radius: 50px;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 10;
+        }
 
+        .reveal-btn:hover {
+            background: #ff9a9e; /* Màu đậm hơn khi hover */
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        .reveal-btn i {
+            margin-right: 10px;
+            animation: icon-float 2s infinite alternate;
+        }
+
+        @keyframes icon-float {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-3px); }
+        }
+
+        /* Hộp Bất Ngờ */
+        .surprise-box {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.5); /* Nền sáng hơn */
+            border-radius: 15px;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.8s ease-in-out;
+            transform: scale(0.9);
+        }
+
+        .surprise-box.show {
+            opacity: 1;
+            max-height: 300px;
+            transform: scale(1);
+        }
+
+        .surprise-box p {
+            font-size: 1.2em;
+            color: #333; /* Màu chữ tối */
+            font-weight: 400;
+        }
+        
+        .surprise-box img {
+             width: 100%;
+             max-width: 200px;
+             height: auto;
+             border-radius: 10px;
+             margin-top: 10px;
+             border: 3px solid var(--primary-color);
+        }
+
+        /* Bỏ hiệu ứng thả tim bay lên (Floating Hearts) để giảm tính lãng mạn */
+        .heart-field {
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Chúc mừng em nhân ngày 20/10!</h1>
-        <p>Chúc em luôn xinh đẹp, mạnh mẽ và thật thành công trong chặng đường sắp tới! Cảm ơn em vì đã luôn động viên, cổ vũ anh và quan tâm anh. Em là món quà đặc biệt mà ông trời gửi tới cho anh</p>
+    <div class="heart-field"></div> <div class="container">
+        <h1><i class="fas fa-fan"></i> Chúc mừng em nhân ngày 20/10! <i class="fas fa-gifts"></i></h1>
+        <p>
+            Chúc em luôn **rạng rỡ**, **mạnh mẽ** và gặt hái được **nhiều thành công** trên con đường mình chọn!
+            <br>
+            Cảm ơn em vì đã luôn là một người em tốt, luôn lắng nghe và động viên anh. Chúc mọi điều tốt đẹp nhất sẽ đến với em!
+        </p>
+
+        <button class="reveal-btn" onclick="showSurprise()">
+            <i class="fas fa-cookie-bite"></i> Mở Lời Chúc Thêm!
+        </button>
+
+        <div id="surprise" class="surprise-box">
+            <p>
+                💌 **Một lời nhắn nhủ thân tình:** Hôm nay là ngày của em, hãy cứ vui vẻ và tận hưởng những điều tuyệt vời nhất nhé!
+            </p>
+            </div>
+
         <div class="sparkles"></div>
     </div>
 
@@ -97,23 +206,28 @@
         function showSurprise() {
             const surprise = document.getElementById('surprise');
             surprise.classList.toggle('show');
+            // Thay đổi chữ trên nút sau khi mở
+            const btn = document.querySelector('.reveal-btn');
+            if(surprise.classList.contains('show')) {
+                btn.innerHTML = '<i class="fas fa-check-circle"></i> Đã Mở!';
+            } else {
+                btn.innerHTML = '<i class="fas fa-cookie-bite"></i> Mở Lời Chúc Thêm!';
+            }
         }
 
-        // Tạo các đốm sáng lung linh
+        // Tạo các đốm sáng lung linh (vẫn giữ để tạo không khí lễ hội)
         const sparklesContainer = document.querySelector('.sparkles');
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 60; i++) { 
             const sparkle = document.createElement('div');
             sparkle.classList.add('sparkle');
             sparkle.style.top = Math.random() * 100 + '%';
             sparkle.style.left = Math.random() * 100 + '%';
             sparkle.style.animationDelay = Math.random() * 5 + 's';
-            sparkle.style.animationDuration = (Math.random() * 2 + 2) + 's';
+            sparkle.style.animationDuration = (Math.random() * 2 + 3) + 's';
             sparklesContainer.appendChild(sparkle);
         }
+
+        // Đã loại bỏ code tạo hiệu ứng thả tim bay lên (Floating Hearts) ở đây.
     </script>
 </body>
 </html>
-
-
-
-
